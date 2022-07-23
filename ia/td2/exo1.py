@@ -1,0 +1,15 @@
+oradea = {"zerind":71, "sibiu":151}
+zerind = {"arad": 75, "oradea": 71}
+arad = {"zerind": 75, "sibiu": 140, "timisoara":118}
+timisoara = {"arad": 118, "lugoj":111}
+lugoj = {"timisoara": 111, "mehadia": 70}
+drobeta = {"mehadia": 75, "craiova": 120}
+mehadia = {"lugoj": 70, "drobeta": 75}
+craiova = {"drobeta": 120, "pitesti": 138, "rimnieu": 146}
+pitesti = {"rimnieu": 97, "bucharest": 101, "craiova": 138}
+rimnieu = {"pitesti": 97, "sibiu": 80, "craiova": 146}
+sibiu = {"rimnieu": 80, "arad": 140, "fagaras": 99, "oradea": 151}
+fagaras = {"sibiu": 99, "bucharest": 211}
+bucharest = {"fagaras": 211, "pitesti": 101, "giurgiu": 90, "urziceni": 85}
+giurgiu = {"bucharest": 90}
+urziceni = {"bucharest": 85, "hirsova": 98, "vaslui": 142}

@@ -1,0 +1,24 @@
+/*SELECT DISTINCT Format FROM ARTICLE
+SELECT Titre FROM ARTICLE WHERE TypeArt="Long"
+SELECT Titre FROM ARTICLE WHERE ((TypeArt="Poster" OR TypeArt="Court") AND TAILLE>8*1024)
+SELECT count(IdArticle) FROM ARTICLE WHERE TypeArt="Poster"
+SELECT Titre FROM ARTICLE WHERE Format="pdf" ORDER BY Taille
+SELECT C.IdConf FROM CONFERENCE AS C, ANNEECONF AS A WHERE (C.PorteeConf="Internationale" AND A.Annee>=2006)
+SELECT TypeArt, count(IdArticle) FROM ARTICLE GROUP BY TypeArt
+SELECT Format, avg(Taille) FROM ARTICLE GROUP BY Format
+SELECT Pays, count(IdPersonne) AS nb FROM LECTEUR GROUP BY Pays HAVING nb<10
+SELECT Ville, count(IdPersonne) AS nb FROM LECTEUR WHERE Pays="France" GROUP BY Ville HAVING nb>2
+SELECT Pays, count(IdConf) AS nb FROM ANNEECONF GROUP BY Pays ORDER BY nb DESC
+SELECT Pays, count(IdConf) AS nb FROM ANNEECONF GROUP BY Pays HAVING nb>5 ORDER BY nb DESC
+SELECT Pays, count(IdConf) AS nb FROM ANNEECONF UNION SELECT NULL, count(IdConf) AS Total FROM ANNEECONF GROUP BY Pays*/
+
+/*SELECT P.Nom, P.Prenom, L.Mail
+FROM PERSONNE AS P JOIN LECTEUR AS L ON L.IdPersonne==P.IdPersonne
+WHERE L.Mail IS NOT null
+UNION
+SELECT P.Nom, P.Prenom, "A preciser"
+FROM PERSONNE AS P JOIN LECTEUR AS L ON L.IdPersonne==P.IdPersonne
+WHERE L.Mail IS null*/
+
+SELECT AR.Titre, AU.IdPersonne, AU.Lobo --FROM AUTEUR AS AU JOIN (ECRIT AS E ON JOIN ARTICLE AS AR ON AR.IdArticle==E.IdArticle) ON AU.IdPersonne==E.IdPersonne
+FROM AUTEUR AS AU JOIN ECRIT AS E ON AU.IdPersonne==E.IdPersonne JOIN ARTICLE AS AR ON E.IdArticle==AR.IdArticle
